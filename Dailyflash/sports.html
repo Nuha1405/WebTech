@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="DailyFlash - Breaking news and trending stories from around the world.">
+    <title>DailyFlash | Sports News</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; scroll-behavior: smooth; }
+        header { background: #333; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+        header h1 { margin: 0; font-size: 2em; }
+        header p { margin: 0; font-style: italic; font-size: 0.9em; }
+        nav { background: #555; padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+        nav ul li a { color: white; text-decoration: none; padding: 10px 15px; display: block; }
+        nav ul li a:hover { background: #777; }
+        .current-page a { font-weight: bold; background: #222; }
+        main { display: flex; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .content { flex: 3; padding-right: 20px; }
+        aside { flex: 1; padding-left: 20px; border-left: 1px solid #ccc; }
+        article { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; overflow: hidden; }
+        article img { max-width: 100%; height: auto; margin-right: 15px; float: left; width: 150px; }
+        .advertisement { background: #ffcc00; padding: 15px; text-align: center; margin-top: 20px; border: 1px dashed #333; }
+        footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 20px; }
+        footer a { color: #aaa; margin: 0 10px; text-decoration: none; }
+        hr { border: 0; height: 1px; background: #ccc; margin: 20px 0; }
+        .back-to-top { display: block; text-align: center; margin-top: 20px; text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="DailyFlash Logo" style="height: 40px; margin-right: 10px;">
+            <div>
+                <h1>DailyFlash</h1>
+                <p>Your Source for Instant News</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="world.html">World</a></li>
+            <li class="current-page"><a href="sports.html">Sports</a></li>
+            <li><a href="tech.html">Tech</a></li>
+            <li><a href="lifestyle.html">Lifestyle</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content">
+            <h2>Sports News</h2>
+
+            <article>
+                <img src="soccer_match_thumb.jpg" alt="Football Player Celebrating">
+                <div class="article-content">
+                    <h2>Top League Match Ends in Shocking Draw</h2>
+                    <time datetime="2025-11-17">Published: November 17, 2025</time>
+                    <p>The highly anticipated derby match concluded with a surprising 2-2 draw after a late equalizer from the underdog team. Both managers expressed mixed feelings about the result, acknowledging the fierce competition. The outcome significantly impacts the top of the league table. Fans were treated to an incredible display of skill and determination.</p>
+                    <a href="sports_article_1.html">Read More</a>
+                </div>
+            </article>
+            <hr>
+
+            <article>
+                <img src="olympics_athlete_thumb.jpg" alt="Sprinter on Track">
+                <div class="article-content">
+                    <h2>Local Sprinter Breaks National 100m Record</h2>
+                    <time datetime="2025-11-16">Published: November 16, 2025</time>
+                    <p>Rising star Jane Doe shattered the long-standing national record for the 100-meter dash during the recent qualifying event. Her performance has cemented her place as a favorite for the upcoming international championships. The athlete attributed her success to a new training regimen and dedicated coaching staff. This achievement is a boost for the entire athletics program.</p>
+                    <a href="sports_article_2.html">Read More</a>
+                </div>
+            </article>
+            <hr>
+
+            <article>
+                <img src="basketball_game_thumb.jpg" alt="Basketball Player Shooting">
+                <div class="article-content">
+                    <h2>Playoffs Race Heats Up After Major Upset</h2>
+                    <time datetime="2025-11-15">Published: November 15, 2025</time>
+                    <p>The bottom-ranked team stunned the league leaders last night with a dominant 110-95 victory, dramatically shaking up the playoff standings. The win was fueled by an unexpected triple-double from their rookie point guard. This unexpected result guarantees a tight finish to the regular season. The defeated team must now regroup quickly for their next fixture.</p>
+                    <a href="sports_article_3.html">Read More</a>
+                </div>
+            </article>
+
+            <a href="#top" class="back-to-top">Back to Top ↑</a>
+        </section>
+
+        <aside>
+            <h3>Top Headlines</h3>
+            <ul>
+                <li><a href="#">Inflation Hits Decade High</a></li>
+                <li><a href="#">Local Artist Unveils New Mural</a></li>
+                <li><a href="#">Space Agency Discovers New Comet</a></li>
+                <li><a href="#">Stock Market Rebounds Sharply</a></li>
+                <li><a href="#">New Traffic Laws Take Effect</a></li>
+            </ul>
+
+            <h4>⭐ Editor's Pick</h4>
+            <ol>
+                <li><a href="#">The Future of Work: A Deep Dive</a></li>
+                <li><a href="#">10 Best Destinations for 2026</a></li>
+            </ol>
+
+            <div class="advertisement">
+                <strong>Sponsored Ad</strong>
+                <p>Buy the new FlashTech Laptop!</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 DailyFlash. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p style="font-size: 0.8em; margin-top: 5px;">Company Credits</p>
+    </footer>
+
+</body>
+</html>

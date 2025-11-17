@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="DailyFlash - Breaking news and trending stories from around the world.">
+    <title>DailyFlash | Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; scroll-behavior: smooth; }
+        header { background: #333; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+        header h1 { margin: 0; font-size: 2em; }
+        header p { margin: 0; font-style: italic; font-size: 0.9em; }
+        nav { background: #555; padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+        nav ul li a { color: white; text-decoration: none; padding: 10px 15px; display: block; }
+        nav ul li a:hover { background: #777; }
+        .current-page a { font-weight: bold; background: #222; }
+        main { display: flex; max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .content { flex: 3; padding-right: 20px; }
+        aside { flex: 1; padding-left: 20px; border-left: 1px solid #ccc; }
+        article { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; overflow: hidden; }
+        article img { max-width: 100%; height: auto; margin-right: 15px; float: left; width: 150px; }
+        .advertisement { background: #ffcc00; padding: 15px; text-align: center; margin-top: 20px; border: 1px dashed #333; }
+        footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 20px; }
+        footer a { color: #aaa; margin: 0 10px; text-decoration: none; }
+        hr { border: 0; height: 1px; background: #ccc; margin: 20px 0; }
+        .back-to-top { display: block; text-align: center; margin-top: 20px; text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+    <a id="top"></a> <header>
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="DailyFlash Logo" style="height: 40px; margin-right: 10px;">
+            <div>
+                <h1>DailyFlash</h1>
+                <p>Your Source for Instant News</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="current-page"><a href="index.html">Home</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="tech.html">Tech</a></li>
+            <li><a href="lifestyle.html">Lifestyle</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content">
+            <h2>Latest Stories</h2>
+
+            <article>
+                <img src="world_summit_thumb.jpg" alt="World Leaders Meeting">
+                <div class="article-content">
+                    <h2>World Leaders Meet for Climate Summit</h2>
+                    <time datetime="2025-11-17">Published: November 17, 2025</time>
+                    <p>Global leaders convened today to address the escalating climate crisis. Discussions focused on new international carbon reduction targets and funding for renewable energy projects in developing nations. The summit aims to finalize a new treaty by the end of the week, promising strict enforcement measures. Experts remain cautiously optimistic about the outcomes.</p>
+                    <a href="world_article_1.html">Read More</a>
+                </div>
+            </article>
+            <hr>
+
+            <article>
+                <img src="team_championship_thumb.jpg" alt="Winning Team Celebration">
+                <div class="article-content">
+                    <h2>National Team Wins Championship in Thrilling Final</h2>
+                    <time datetime="2025-11-16">Published: November 16, 2025</time>
+                    <p>In a nail-biting finish, the national squad secured the coveted championship trophy with a last-minute goal. The victory marks their first major title in a decade, sparking massive celebrations across the country. The coach credited teamwork and relentless training for the historic win. Fans are already looking forward to next season's campaign.</p>
+                    <a href="sports_article_2.html">Read More</a>
+                </div>
+            </article>
+            <hr>
+
+            <article>
+                <img src="smartphone_record_thumb.jpg" alt="New Smartphone Model">
+                <div class="article-content">
+                    <h2>New Smartphone Sets Record Sales on Launch Day</h2>
+                    <time datetime="2025-11-15">Published: November 15, 2025</time>
+                    <p>The highly anticipated 'Nova X' smartphone has shattered sales records, selling out within hours of its official launch. The device features a revolutionary camera system and an unprecedented battery life, drawing massive consumer interest. Analysts predict this model will dominate the premium segment for the foreseeable future. Production is being ramped up to meet the soaring demand.</p>
+                    <a href="tech_article_3.html">Read More</a>
+                </div>
+            </article>
+            
+            <a href="#top" class="back-to-top">Back to Top ↑</a>
+        </section>
+
+        <aside>
+            <h3>Top Headlines</h3>
+            <ul>
+                <li><a href="#">Inflation Hits Decade High</a></li>
+                <li><a href="#">Local Artist Unveils New Mural</a></li>
+                <li><a href="#">Space Agency Discovers New Comet</a></li>
+                <li><a href="#">Stock Market Rebounds Sharply</a></li>
+                <li><a href="#">New Traffic Laws Take Effect</a></li>
+            </ul>
+
+            <h4>⭐ Editor's Pick</h4>
+            <ol>
+                <li><a href="#">The Future of Work: A Deep Dive</a></li>
+                <li><a href="#">10 Best Destinations for 2026</a></li>
+            </ol>
+
+            <div class="advertisement">
+                <strong>Sponsored Ad</strong>
+                <p>Buy the new FlashTech Laptop!</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 DailyFlash. All Rights Reserved.</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">X (Twitter)</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p style="font-size: 0.8em; margin-top: 5px;">Company Credits</p>
+    </footer>
+
+</body>
+</html>
