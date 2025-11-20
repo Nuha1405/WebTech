@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Portfolio</title>
+    <meta name="author" content="Your Name">
+    <meta name="description" content="A personal portfolio for a computer science student, built for a Web Technologies lab task.">
+    <meta name="keywords" content="computer science, portfolio, web technologies, HTML5, internship">
+    
+    </head>
+<body>
+
+    <header>
+        <h1>[Sanjana Nuha]</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm a passionate **Computer Science student** currently preparing for an internship. 
+                I specialize in [Mention your key skills, e.g., web development, data analysis, or a specific programming language]. 
+                I'm actively seeking opportunities to apply my knowledge in real-world projects and grow my technical skills.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Educational Qualifications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree/Certificate</th>
+                        <th>Institution</th>
+                        <th>Years</th>
+                        <th>Result/CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.Sc. in Computer Science</td>
+                        <td>American International University Bangladesh (AIUB)</td>
+                        <td>[Start Year] - [End Year]</td>
+                        <td>[Your CGPA]</td>
+                    </tr>
+                    <tr>
+                        <td>Higher Secondary Certificate (HSC)</td>
+                        <td>[HSC College Name]</td>
+                        <td>[Start Year] - [End Year]</td>
+                        <td>[Your GPA/Result]</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="POST">
+                
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="visitor_name" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="visitor_email" required>
+                </div>
+
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="visitor_message" rows="4" required></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 [Your Full Name]. All rights reserved. | Built using Semantic HTML5.</p>
+    </footer>
+
+</body>
+</html>
