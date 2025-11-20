@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and table design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .error-message {
+            margin-top: -10px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap; /* Allows wrapping on small screens */
+        }
+        /* Custom colors for conditional rows */
+        .old-book {
+            background-color: #e2e8f0; /* light gray (slate-200) */
+        }
+        .new-book {
+            background-color: #a7f3d0; /* light green (emerald-200) */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="container mx-auto bg-white p-6 md:p-10 rounded-xl shadow-2xl">
+        <h1 class="text-3xl sm:text-4xl font-extrabold mb-8 text-indigo-700">
+            Library Book Manager
+        </h1>
+
+        <!-- Input Form Section -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg border border-gray-200">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Add New Book</h2>
+            <div class="input-container">
+                
+                <!-- Book Title Input -->
+                <div class="flex-1 min-w-[200px]">
+                    <label for="bookTitle" class="block text-sm font-medium text-gray-700 mb-1">Book Title</label>
+                    <input type="text" id="bookTitle" placeholder="Enter book title" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                    <p id="titleError" class="error-message text-red-500 hidden"></p>
+                </div>
+
+                <!-- Publication Year Input -->
+                <div class="flex-1 min-w-[150px]">
+                    <label for="pubYear" class="block text-sm font-medium text-gray-700 mb-1">Publication Year</label>
+                    <input type="text" id="pubYear" placeholder="e.g., 2024" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                    <p id="yearError" class="error-message text-red-500 hidden"></p>
+                </div>
+
+                <!-- Add Book Button -->
+                <button id="addBookBtn" class="mt-auto py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md transition duration-200 self-end">
+                    Add Book
+                </button>
+            </div>
+        </section>
+
+        <!-- Book List Table -->
+        <section>
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Book List</h2>
+            <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-100">
+                <table class="min-w-full divide-y divide-gray-200" id="bookTable">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider w-3/4">Title</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider w-1/4">Year</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200" id="bookTableBody">
+                        <!-- Book rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Get necessary DOM elements
+        const titleInput = document.getElementById('bookTitle');
+        const yearInput = document.getElementById('pubYear');
+        const addBookBtn = document.getElementById('addBookBtn');
+        const bookTableBody = document.getElementById('bookTableBody');
+        const titleError = document.getElementById('titleError');
+        const yearError = document.getElementById('yearError');
+
+        // Function to validate the book title
+        function validateTitle(title) {
+            if (title.trim() === '') {
+                return "Title cannot be empty.";
+            }
+            // Title must only contain alphabetic characters (a-z, A-Z)
+            if (!/^[a-zA-Z]+$/.test(title)) {
+                return "Title must contain only alphabetic characters (no spaces, numbers, or special characters).";
+            }
+            return ""; // Empty string means valid
+        }
+
+        // Function to validate the publication year
+        function validateYear(year) {
+            const currentYear = new Date().getFullYear();
+            const yearNum = parseInt(year);
+
+            if (year.trim() === '') {
+                return "Publication Year cannot be empty.";
+            }
+            // Check if it is a four-digit number
+            if (!/^\d{4}$/.test(year)) {
+                return "Year must be a four-digit number.";
+            }
+            // Check range (1900 to current year)
+            if (yearNum < 1900 || yearNum > currentYear) {
+                return `Year must be between 1900 and ${currentYear}.`;
+            }
+            return ""; // Empty string means valid
+        }
+
+        // Function to display error messages
+        function displayError(element, message) {
+            element.textContent = message;
+            element.classList.remove('hidden');
+        }
+
+        // Function to clear error messages
+        function clearError(element) {
+            element.textContent = '';
+            element.classList.add('hidden');
+        }
+
+        // Event listener for the Add Book button
+        addBookBtn.addEventListener('click', () => {
+            const title = titleInput.value.trim();
+            const year = yearInput.value.trim();
+
+            const titleValidationMessage = validateTitle(title);
+            const yearValidationMessage = validateYear(year);
+
+            let isValid = true;
+
+            // Handle Title Validation
+            if (titleValidationMessage) {
+                displayError(titleError, titleValidationMessage);
+                isValid = false;
+            } else {
+                clearError(titleError);
+            }
+
+            // Handle Year Validation
+            if (yearValidationMessage) {
+                displayError(yearError, yearValidationMessage);
+                isValid = false;
+            } else {
+                clearError(yearError);
+            }
+
+            // If both inputs are valid, add the book to the table
+            if (isValid) {
+                addBookToTable(title, year);
+                
+                // Clear the input fields after successful submission
+                titleInput.value = '';
+                yearInput.value = '';
+                
+                // Set focus back to the title input for quick entry
+                titleInput.focus();
+            }
+        });
+
+        // Function to add a new row to the table
+        function addBookToTable(title, year) {
+            const newRow = bookTableBody.insertRow();
+            
+            // Determine the background color class
+            const yearNum = parseInt(year);
+            const bgColorClass = yearNum < 2000 ? 'old-book' : 'new-book';
+
+            // Apply the color class to the new row
+            newRow.classList.add(bgColorClass);
+
+            // Create and populate the Title cell
+            const titleCell = newRow.insertCell(0);
+            titleCell.textContent = title;
+            titleCell.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-sm', 'font-medium', 'text-gray-900');
+
+            // Create and populate the Year cell
+            const yearCell = newRow.insertCell(1);
+            yearCell.textContent = year;
+            yearCell.classList.add('px-6', 'py-4', 'whitespace-nowrap', 'text-sm', 'text-gray-900');
+        }
+    </script>
+
+</body>
+</html>
