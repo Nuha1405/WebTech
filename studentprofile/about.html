@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Multi-Section About Page</title>
+
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        
+        .page-section {
+            color: #333;
+            padding: 40px; 
+            margin: 20px auto; 
+            width: 80%;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section 1: About Me (Unique ID: #about-me) */
+        #about-me {
+            background-color: #e0f7fa; /* Light Blue */
+        }
+
+        /* Section 2: Education (Unique ID: #education) */
+        #education {
+            background-color: #fff3e0; /* Light Orange/Cream */
+        }
+
+        /* Section 3: Hobbies (Unique ID: #hobbies) */
+        #hobbies {
+            background-color: #e8f5e9; /* Light Green */
+        }
+
+        /* Header Style */
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        /* Custom hr Styles */
+        /* 7. Add a <hr> between each section with custom color, height, and width. */
+        .divider {
+            border: none;
+            height: 5px;
+            width: 50%;
+            margin: 30px auto;
+            background-color: #007bff; /* Custom Color */
+            border-radius: 2px;
+        }
+
+        /* Specific text style for the footer (optional, good practice) */
+        .footer-text {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Personal Site - About Page</h1>
+
+    <div id="about-me" class="page-section">
+        <h2>👋 About Me</h2>
+        <p style="color: #00796b; font-weight: bold;">
+            Hello! I am a passionate student of Web Technologies, currently focusing on responsive design and modern CSS practices.
+        </p>
+        <p>
+            I believe that good design should be both functional and beautiful. I'm always looking for new challenges and opportunities to learn and build better web experiences.
+        </p>
+    </div>
+
+    <hr class="divider">
+
+    <div id="education" class="page-section">
+        <h2>🎓 Education</h2>
+        <p>
+            I am currently pursuing a degree in **Computer Science** at [Your University Name].
+        </p>
+        <ul>
+            <li>**Coursework Focus:** HTML5, CSS3, JavaScript, Database Management, and UI/UX Principles.</li>
+            <li>**Expected Graduation:** May 20XX</li>
+        </ul>
+        <p style="text-decoration: underline; color: #ff9800;">
+            Web technologies are the most exciting part of my curriculum.
+        </p>
+    </div>
+
+    <hr class="divider">
+
+    <div id="hobbies" class="page-section">
+        <h2>🎨 Hobbies</h2>
+        <p>
+            When I'm not coding, I enjoy engaging in several creative and relaxing activities:
+        </p>
+        <ul>
+            <li>**Digital Photography:** Capturing urban landscapes and nature.</li>
+            <li>**Reading:** Especially classic science fiction novels.</li>
+            <li>**Hiking:** Exploring local trails to clear my mind and stay active.</li>
+        </ul>
+        <p style="font-style: italic;">
+            These activities provide a great balance to the analytical nature of web development.
+        </p>
+    </div>
+
+    <div class="footer-text">
+        <p>Page created for Lab Task 02: Multi-section About Page</p>
+    </div>
+
+</body>
+</html>
